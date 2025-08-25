@@ -4,4 +4,5 @@ pydantic
 python-multipart
 pandas
 gunicorn
-transformers[torch]==4.40.1
+transformers==4.37.0
+tokenizers==0.19.1
