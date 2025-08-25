@@ -4,4 +4,4 @@ pydantic
 python-multipart
 pandas
 gunicorn
-transformer
+transformer==4.41.2
