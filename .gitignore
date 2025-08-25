@@ -1,0 +1,26 @@
+# ---- Python (Backend) ----
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+instance/
+.env
+venv/
+.env/
+
+# ---- Node/React (Frontend) ----
+node_modules/
+build/
+dist/
+.cache/
+.npm/
+*.log
+
+# ---- OS/Editor files ----
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
