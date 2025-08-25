@@ -5,4 +5,4 @@ python-multipart
 pandas
 gunicorn
 transformers==4.37.0
-tokenizers==0.19.1
+
