@@ -20,7 +20,7 @@ app = FastAPI()
 # Allow frontend to connect
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://legal-sentiment-analysis-website.vercel.app","http://localhost:3000"],  # change to frontend URL in production
+    allow_origins=["*"],  # change to frontend URL in production
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
