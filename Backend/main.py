@@ -1,4 +1,6 @@
 import os
+
+from transformers import AutoModelForSequenceClassification
 os.environ["OMP_NUM_THREADS"] = "1"
 os.environ["MKL_NUM_THREADS"] = "1"
 
@@ -18,7 +20,7 @@ app = FastAPI()
 # Allow frontend to connect
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://legal-sentiment-analysis-website.vercel.app"],  # change to frontend URL in production
+    allow_origins=["https://legal-sentiment-analysis-website.vercel.app","http://localhost:3000"],  # change to frontend URL in production
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -83,3 +85,10 @@ def read_root():
     return {"message": "Backend is running 🚀"}
 
 
+@app.post("/ping")
+def ping():
+    return {"status": "ok"}
+
+
+device = torch.device("cpu")
+model = AutoModelForSequenceClassification.from_pretrained("distilbert-base-uncased", torch_dtype=torch.float32)
