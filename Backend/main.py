@@ -1,6 +1,6 @@
 import os
 
-from transformers import AutoModelForSequenceClassification
+
 os.environ["OMP_NUM_THREADS"] = "1"
 os.environ["MKL_NUM_THREADS"] = "1"
 
@@ -90,5 +90,3 @@ def ping():
     return {"status": "ok"}
 
 
-device = torch.device("cpu")
-model = AutoModelForSequenceClassification.from_pretrained("distilbert-base-uncased", torch_dtype=torch.float32)
