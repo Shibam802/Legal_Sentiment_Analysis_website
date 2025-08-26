@@ -6,7 +6,7 @@ function App() {
 
   const analyzeSentiment = async () => {
     try {
-      const response = await fetch("https://legal-sentiment-analysis-website.onrender.com/", {
+      const response = await fetch("https://legal-sentiment-analysis-website.onrender.com/analyze/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ text }),
