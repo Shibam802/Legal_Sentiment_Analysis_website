@@ -16,7 +16,11 @@ from legal_sentiment import LegalSentimentAnalyzer  # Your class in a separate f
 torch.set_num_threads(1)
 
 app = FastAPI()
-
+origins = [
+    "http://localhost:3000",  # for local dev
+    "https://legal-sentiment-analysis-website.vercel.app",  # production
+    "https://www.legal-sentiment-analysis-website.vercel.app",  # www subdomain
+]
 # Allow frontend to connect
 app.add_middleware(
     CORSMiddleware,
